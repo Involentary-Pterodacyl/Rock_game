@@ -17,4 +17,35 @@
 
 <script>
   console.log("hello");
+
+
+// this randomly picks what the computer will throw
+  function computer() {
+    let choice = Math.random(3)
+    if (choice === 0) {
+      return "Rock"
+    } 
+    if (choice === 1) {
+      return "Paper"
+    }
+    if (choice === 2) {
+      return "Scissors"
+    }
+  }
+
+// cheaks if the person imputs a valid response
+  function human() {
+    let response = prompt("Pick rock paper or scissors");
+
+    if (prompt === "rock") OR (prompt === "paper") {
+      return response
+    }
+    if (prompt === "scissors") {
+      return response
+    }
+    else {
+      return "Invalid respone try again"
+    }
+  }
+  
 </script>
