@@ -60,10 +60,49 @@
 
     if (computer === "rock") {
       if (human === "paper") {
-        return "Human wins"
+        your_score += 1 
+        return "Ypu win"
       }
-      if (human == )
+      if (human === "scissors") {
+        my_score += 1
+        return "I win"
+      }
+      if (human === "rock") {
+        return "Tie"
+      }
     }
+
+    if (computer === "paper") {
+      if (human === "paper") {
+        return "Tie"
+      }
+      if (human === "scissors") {
+        my_score += 1
+        return "I win"
+      }
+      if (human === "rock") {
+        your_score += 1 
+        return "You win"
+        
+      }
+    }
+
+    if (computer === "scissors") {
+      if (human === "paper") {
+        my_score += 1
+        return "I win"
+      }
+      if (human === "scissors") {
+        return "Tie"
+        
+      }
+      if (human === "rock") {
+        your_score += 1 
+        return "You win"
+
+      }
+    }
+    
   }
   
   
