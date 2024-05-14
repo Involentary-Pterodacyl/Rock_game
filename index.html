@@ -21,7 +21,8 @@
 
 // this randomly picks what the computer will throw
   function computer() {
-    let choice = Math.random(3)
+    let choice = Math.floor(Math.random() * 3)
+    
     if (choice === 0) {
       return "rock"
     } 
@@ -35,12 +36,16 @@
 
 // cheaks if the person imputs a valid response
   function human() {
-    let response = prompt("Pick rock paper or scissors");
+    let response = String(prompt("Pick rock paper or scissors"));
 
-    if (prompt === "rock") OR (prompt === "paper") {
+
+    if (response === "rock") {
       return response
     }
-    if (prompt === "scissors") {
+    if (response === "paper") {
+      return response
+    }
+    if (response === "scissors") {
       return response
     }
     else {
@@ -59,27 +64,33 @@
   function round(computer, human) {
 
     if (computer === "rock") {
+      
       if (human === "paper") {
         your_score += 1 
-        return "Ypu win"
+        return "You win"
       }
+      
       if (human === "scissors") {
         my_score += 1
         return "I win"
       }
+      
       if (human === "rock") {
         return "Tie"
       }
     }
 
     if (computer === "paper") {
+      
       if (human === "paper") {
         return "Tie"
       }
+      
       if (human === "scissors") {
         my_score += 1
         return "I win"
       }
+      
       if (human === "rock") {
         your_score += 1 
         return "You win"
@@ -88,14 +99,17 @@
     }
 
     if (computer === "scissors") {
+      
       if (human === "paper") {
         my_score += 1
         return "I win"
       }
+      
       if (human === "scissors") {
         return "Tie"
         
       }
+      
       if (human === "rock") {
         your_score += 1 
         return "You win"
@@ -104,6 +118,9 @@
     }
     
   }
-  
+
+  console.log(round(computer(), human()))
+  console.log(your_score)
+  console.log(my_score)
   
 </script>
