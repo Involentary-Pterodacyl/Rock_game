@@ -119,8 +119,36 @@
     
   }
 
+// runs the code  5 times then using an if statment declares the winner of the set   
+function play_set() {
+  
   console.log(round(computer(), human()))
   console.log(your_score)
   console.log(my_score)
-  
+
+  console.log(round(computer(), human()))
+  console.log(your_score)
+  console.log(my_score)
+
+  console.log(round(computer(), human()))
+  console.log(your_score)
+  console.log(my_score)
+
+  console.log(round(computer(), human()))
+  console.log(your_score)
+  console.log(my_score)
+
+  console.log(round(computer(), human()))
+  console.log(your_score)
+  console.log(my_score)
+
+  if (your_score > my_score) {
+    return "you won the set congradulations. the score was " + your_score + " to " + my_score
+  }
+  if (my_score > your_score) {
+    return "I win. the score was " + my_score + " to " + your_score
+  }
+}
+
+  console.log(play_set())
 </script>
