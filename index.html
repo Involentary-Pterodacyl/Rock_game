@@ -9,7 +9,11 @@
 </head>
 
 <body>
-  Hello world
+  <h1> Play Rock Paper Scisors With Me</h1>
+  <h2> pick one</h2>
+  <button id = 'r'>Rock</button>
+  <button id = 'p'>Paper</button>
+  <button id = 's'>Scissors</button>
   <script src="script.js"></script>
 </body>
 
@@ -34,23 +38,14 @@
     }
   }
 
-// cheaks if the person imputs a valid response
+// cheaks whictch button gets pressed 
+  // finds each button and stores it as their corrasponding value
+  const rock = document.getElementById('r');
+  const paper = document.getElementById('p');
+  const scissors = document.getElementById('s');
   function human() {
-    let response = String(prompt("Pick rock paper or scissors"));
-
-
-    if (response === "rock") {
-      return response
-    }
-    if (response === "paper") {
-      return response
-    }
-    if (response === "scissors") {
-      return response
-    }
-    else {
-      return "Invalid respone try again"
-    }
+    
+    
   }
 
   let your_score = 0
