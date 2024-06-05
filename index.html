@@ -51,63 +51,57 @@
   const paper = document.getElementById('p');
   const scissors = document.getElementById('s');
   const anyButton = document.querySelector('button');
-  const textBox = document.createElement('p');
+  const textBox = document.getElementById('addTo');
   const sect = document.querySelector("section");
 
   let your_score = 0
   let my_score = 0
 
   function round() {
-    console.log("test")
-    textBox.innerText = "Tie no points earned";
-    // NOTE TO LEIGH from Andrew: I changed 'textContext' to 'innerText' and that seems to work.
-    // more info here about the difference between the two: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent#differences_from_innertext
-    sect.appendChild(textBox);
-
-
-    rock.onClick = function () {
+   
+    rock.onclick = function () {
       console.log("test2")
       if (comp = 1) {
-        textBox.textContext = "Tie no points earned";
+        textBox.innerText = "Tie no points earned";
         sect.appendChild(textBox);
       }
       if (comp = 2) {
         my_score += 1;
-        textBox.textContext = "I Win";
+        textBox.innerText = "I Win";
         sect.appendChild(textBox);
       }
       if (comp = 3) {
         your_score += 1;
-        textBox.textContext = "You Win";
+        textBox.innerText = "You Win";
         sect.appendChild(textBox);
       }
     }
 
-    paper.onClick = function () {
+    paper.onclick = function () {
       if (comp = 2) {
-        textBox.textContext = "Tie no points earned";
+        textBox.innerText = "Tie no points earned";
       }
       if (comp = 3) {
         my_score += 1;
-        textBox.textContext = "I Win";
+        textBox.innerText = "I Win";
       }
       if (comp = 1) {
         your_score += 1;
-        textBox.textContext = "You Win";
+        textBox.innerText = "You Win";
       }
     }
 
-    scissors.onClick = function () {
+    scissors.onclick = function () {
       if (comp = 3) {
-        textBox.textContext = "Tie no points earned";
+        textBox.innerText = "Tie no points earned";
       }
       if (comp = 1) {
         my_score += 1;
-        textBox.textContext = "I Win";
+        textBox.innerText = "I Win";
       }
       if (comp = 2) {
         your_score += 1;
-        textBox.textContext = "You Win";
+        textBox.innerText = "You Win";
       }
     }
   }
