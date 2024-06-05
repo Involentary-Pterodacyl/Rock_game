@@ -11,9 +11,14 @@
 <body>
   <h1> Play Rock Paper Scisors With Me</h1>
   <h2> pick one</h2>
-  <button id = 'r'>Rock</button>
-  <button id = 'p'>Paper</button>
-  <button id = 's'>Scissors</button>
+  <p> My Score: </p>
+  <p>Your Score:</p>
+  <button id='r'>Rock</button>
+  <button id='p'>Paper</button>
+  <button id='s'>Scissors</button>
+  <section>
+    <p id="addTo"></p>
+  </section>
   <script src="script.js"></script>
 </body>
 
@@ -23,127 +28,198 @@
   console.log("hello");
 
 
-// this randomly picks what the computer will throw
+  // this randomly picks what the computer will throw
+  let comp = 0
   function computer() {
     let choice = Math.floor(Math.random() * 3)
-    
+
     if (choice === 0) {
-      return "rock"
-    } 
+      comp = 1
+    }
     if (choice === 1) {
-      return "paper"
+      comp = 2
     }
     if (choice === 2) {
-      return "scissors"
+      comp = 3
     }
+    console.log(comp)
   }
 
-// cheaks whictch button gets pressed 
+  // cheaks whictch button gets pressed 
   // finds each button and stores it as their corrasponding value
   const rock = document.getElementById('r');
   const paper = document.getElementById('p');
   const scissors = document.getElementById('s');
-  function human() {
-    
-    
-  }
+  const anyButton = document.querySelector('button');
+  const textBox = document.createElement('p');
+  const sect = document.querySelector("section");
 
   let your_score = 0
   let my_score = 0
 
-// runs through all possible inputs for human and cumputer then shows the winner
-// if computer is rock then if human is paper human wins 
+  function round() {
+    console.log("test")
+    textBox.innerText = "Tie no points earned";
+    // NOTE TO LEIGH from Andrew: I changed 'textContext' to 'innerText' and that seems to work.
+    // more info here about the difference between the two: https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent#differences_from_innertext
+    sect.appendChild(textBox);
+
+
+    rock.onClick = function () {
+      console.log("test2")
+      if (comp = 1) {
+        textBox.textContext = "Tie no points earned";
+        sect.appendChild(textBox);
+      }
+      if (comp = 2) {
+        my_score += 1;
+        textBox.textContext = "I Win";
+        sect.appendChild(textBox);
+      }
+      if (comp = 3) {
+        your_score += 1;
+        textBox.textContext = "You Win";
+        sect.appendChild(textBox);
+      }
+    }
+
+    paper.onClick = function () {
+      if (comp = 2) {
+        textBox.textContext = "Tie no points earned";
+      }
+      if (comp = 3) {
+        my_score += 1;
+        textBox.textContext = "I Win";
+      }
+      if (comp = 1) {
+        your_score += 1;
+        textBox.textContext = "You Win";
+      }
+    }
+
+    scissors.onClick = function () {
+      if (comp = 3) {
+        textBox.textContext = "Tie no points earned";
+      }
+      if (comp = 1) {
+        my_score += 1;
+        textBox.textContext = "I Win";
+      }
+      if (comp = 2) {
+        your_score += 1;
+        textBox.textContext = "You Win";
+      }
+    }
+  }
+
+
+
+
+  // runs through all possible inputs for human and cumputer then shows the winner
+  // if computer is rock then if human is paper human wins 
   // if human is rock tie
   // if human is scissors comp wins (reapeat)
-// and updates the score
-  function round(computer, human) {
+  // and updates the score
+  // function round(computer, human) {
 
-    if (computer === "rock") {
-      
-      if (human === "paper") {
-        your_score += 1 
-        return "You win"
-      }
-      
-      if (human === "scissors") {
-        my_score += 1
-        return "I win"
-      }
-      
-      if (human === "rock") {
-        return "Tie"
-      }
-    }
+  //   if (computer === "rock") {
 
-    if (computer === "paper") {
-      
-      if (human === "paper") {
-        return "Tie"
-      }
-      
-      if (human === "scissors") {
-        my_score += 1
-        return "I win"
-      }
-      
-      if (human === "rock") {
-        your_score += 1 
-        return "You win"
-        
-      }
-    }
+  //     if (human === "paper") {
+  //       your_score += 1 
+  //       buttonClicked = ""
+  //       return "You win"
+  //     }
 
-    if (computer === "scissors") {
-      
-      if (human === "paper") {
-        my_score += 1
-        return "I win"
-      }
-      
-      if (human === "scissors") {
-        return "Tie"
-        
-      }
-      
-      if (human === "rock") {
-        your_score += 1 
-        return "You win"
+  //     if (human === "scissors") {
+  //       my_score += 1
+  //       buttonClicked = ""
+  //       return "I win"
+  //     }
 
-      }
-    }
-    
-  }
+  //     if (human === "rock") {
+  //       buttonClicked = ""
+  //       return "Tie"
+  //     }
+  //   }
 
-// runs the code  5 times then using an if statment declares the winner of the set   
-function play_set() {
-  
-  console.log(round(computer(), human()))
-  console.log(your_score)
-  console.log(my_score)
+  //   if (computer === "paper") {
 
-  console.log(round(computer(), human()))
-  console.log(your_score)
-  console.log(my_score)
+  //     if (human === "paper") {
+  //       buttonClicked = ""
+  //       return "Tie"
+  //     }
 
-  console.log(round(computer(), human()))
-  console.log(your_score)
-  console.log(my_score)
+  //     if (human === "scissors") {
+  //       my_score += 1
+  //       buttonClicked = ""
+  //       return "I win"
+  //     }
 
-  console.log(round(computer(), human()))
-  console.log(your_score)
-  console.log(my_score)
+  //     if (human === "rock") {
+  //       your_score += 1 
+  //       buttonClicked = ""
+  //       return "You win"
 
-  console.log(round(computer(), human()))
-  console.log(your_score)
-  console.log(my_score)
+  //     }
+  //   }
 
-  if (your_score > my_score) {
-    return "you won the set congradulations. the score was " + your_score + " to " + my_score
-  }
-  if (my_score > your_score) {
-    return "I win. the score was " + my_score + " to " + your_score
-  }
-}
+  //   if (computer === "scissors") {
 
-  console.log(play_set())
+  //     if (human === "paper") {
+  //       my_score += 1
+  //       buttonClicked = ""
+  //       return "I win"
+  //     }
+
+  //     if (human === "scissors") {
+  //       buttonClicked = ""
+  //       return "Tie"
+
+  //     }
+
+  //     if (human === "rock") {
+  //       your_score += 1
+  //       buttonClicked = ""
+  //       return "You win"
+
+  //     }
+  //   }
+
+  // }
+
+  // runs the code  5 times then using an if statment declares the winner of the set   
+  // function play_set() {
+
+  //   console.log(round(computer(), buttonClicked))
+  //   console.log(your_score)
+  //   console.log(my_score)
+
+  //   console.log(round(computer(), buttonClicked))
+  //   console.log(your_score)
+  //   console.log(my_score)
+
+  //   console.log(round(computer(), buttonClicked))
+  //   console.log(your_score)
+  //   console.log(my_score)
+
+  //   console.log(round(computer(), buttonClicked))
+  //   console.log(your_score)
+  //   console.log(my_score)
+
+  //   console.log(round(computer(), buttonClicked))
+  //   console.log(your_score)
+  //   console.log(my_score)
+
+  //   if (your_score > my_score) {
+  //     return "you won the set congradulations. the score was " + your_score + " to " + my_score
+  //   }
+  //   if (my_score > your_score) {
+  //     return "I win. the score was " + my_score + " to " + your_score
+  //   }
+  // }
+
+  //   console.log(play_set())
+  computer()
+  round()
+
 </script>
