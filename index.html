@@ -69,38 +69,38 @@
     computer()
     
     if (humanChoice == "rock") {
-      if (comp = 1) {
+      if (comp == 1) {
         return "tie";
       }
-      if (comp = 2) {
+      if (comp == 2) {
         return "compWin"
       }
-      if (comp = 3) {
+      if (comp == 3) {
         return "humanWin"
       }
     } 
 
     if (humanChoice == "paper") {
-      if (comp = 2) {
+      if (comp == 2) {
         return "tie";
       }
-      if (comp = 3) {
+      if (comp == 3) {
         return "compWin"
       }
-      if (comp = 1) {
+      if (comp == 1) {
         return "humanWin"
       }
     } 
 
 
     if (humanChoice == "scissors") {
-      if (comp = 3) {
+      if (comp == 3) {
         return "tie";
       }
-      if (comp = 1) {
+      if (comp == 1) {
         return "compWin"
       }
-      if (comp = 2) {
+      if (comp == 2) {
         return "humanWin"
       }
     } 
@@ -126,8 +126,20 @@
     }
 
     if (my_score == 5) {
-      point5.innerText = "I reached 5 points first I win the set";
+      point5.innerText = "I reached 5 points first, I win the set";
+      my_score = 0
+      your_score = 0
       
+      humanSc.innerText = "Your Score: " + your_score;
+      compSc.innerText = "My Score: " + my_score;
+    }
+    if (your_score == 5) {
+      point5.innerText = "You reached 5 points first, you win the set";
+      my_score = 0
+      your_score = 0
+      
+      humanSc.innerText = "Your Score: " + your_score;
+      compSc.innerText = "My Score: " + my_score;
     }
     
   }
